@@ -1,0 +1,66 @@
+#include<iostream.h>
+#include<conio.h>
+class B
+{
+	int a;
+public:
+	int b;
+
+	void get_ab();
+	int get_a(void);
+	void show_a(void);
+
+};
+class D:private B
+{
+	int c;
+public:
+	void mul(void);
+	void display(void);
+
+};
+void B :: get_ab(void)
+{
+	cout<<"\nenter values of a and b";
+	cin>> a >> b;
+}
+int B :: get_a()
+{
+	return a;
+}
+void B :: show_a()
+{
+	cout<<"a="<<a<<"\n";
+}
+void D :: mul()
+{
+	get_ab();
+	c=b*get_a();
+}
+void D :: display()
+{
+	show_a();
+
+	cout<<"b="<<b<<"\n";
+	cout<<"c="<<c<<"\n";
+
+}
+int main()
+{
+	D d;
+	clrscr();
+
+	d.mul();
+
+	d.display();
+
+
+	d.mul();
+	d.display();
+
+
+	getch();
+	return 0;
+
+
+}
